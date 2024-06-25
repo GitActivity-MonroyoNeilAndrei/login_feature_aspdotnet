@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/login_feature2.props" />
+</Project>

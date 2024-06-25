@@ -1,0 +1,32 @@
+@model List<login_feature2.Models.Users>
+
+<h1>Users List</h1>
+<partial name="Create" />
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.UserName</td>
+                <td>@user.Name</td>
+                <td>@user.Age</td>
+                <td>@user.Address</td>
+                <td>@user.Email</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

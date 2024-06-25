@@ -1,0 +1,45 @@
+<button onclick="addUserToggleForm()" class="btn btn-primary btn-sm">Add User</button>
+
+<div id="addUserFormBg" class="z-2 position-fixed top-0 start-0 bg-dark opacity-50 d-none" style="height: 100vh; width: 100vw;"></div>
+
+<form asp-action="Create" id="addUserForm" class="z-3 position-fixed start-50 translate-middle-x py-3 px-4 bg-white rounded-3 d-none" style="width: 25rem;">
+    <h3 class="text-center">Add User</h3>
+    <div class="form-floating mb-3">
+        <input name="username" type="text" class="form-control" id="floatingInput" placeholder="Juan Dela Cruz">
+        <label for="floatingInput">Username</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="name" type="text" class="form-control" id="floatingInput" placeholder="Juan Dela Cruz">
+        <label for="floatingInput">Full Name</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="age" type="number" class="form-control" id="floatingInput" placeholder="21">
+        <label for="floatingInput">Age</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="address" type="text" class="form-control" id="floatingInput" placeholder="Juan Dela Cruz">
+        <label for="floatingInput">Address</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="email" type="email" class="form-control" id="floatingInput" placeholder="juan@gmail.com">
+        <label for="floatingInput">Email</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="password" type="password" class="form-control" id="floatingInput" placeholder="password">
+        <label for="floatingInput">Password</label>
+    </div>
+    <div class="d-flex justify-content-center gap-3">
+        <input type="submit" class="btn btn-primary btn-sm" style="width: 4rem;" value="Add">
+        <button type="button" onclick="addUserToggleForm()" class="btn btn-danger btn-sm" style="width: 4rem;">Close</button>
+    </div>
+</form>
+
+<script>
+    const addUserForm = document.getElementById("addUserForm");
+    const addUserFormBg = document.getElementById("addUserFormBg");
+
+    function addUserToggleForm () {
+        addUserForm.classList.toggle("d-none");
+        addUserFormBg.classList.toggle("d-none");
+    }
+</script>
