@@ -1,29 +1,41 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using login_feature2.Data;
-using Microsoft.Extensions.Options;
-using login_feature2.Models;
+using login_feature2.Models; // Make sure to include this namespace
+using Microsoft.Extensions.DependencyInjection;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllersWithViews(); 
+// Add services
+builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 
+// Add DbContext
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddIdentity<Users, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
 
-builder.Services.AddRazorPages();
+// Add Identity with custom User class
+builder.Services.AddIdentity<Users, IdentityRole>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = false;
+    options.Password.RequiredLength = 6; // Example of password policy
+})
+.AddEntityFrameworkStores<ApplicationDbContext>()
+.AddDefaultTokenProviders()
+.AddDefaultUI();
+
+// Add SignInManager for custom Users class
+builder.Services.AddScoped<SignInManager<Users>>();
 
 
-var app = builder.Build();  
+var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configure middleware, routing, and endpoints
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -42,3 +54,4 @@ app.MapControllerRoute(
 app.MapRazorPages();
 
 app.Run();
+

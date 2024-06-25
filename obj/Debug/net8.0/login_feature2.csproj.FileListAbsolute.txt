@@ -245,6 +245,7 @@
 /Users/neilandreimonroyo/Documents/dotnet-projects/login_feature2/obj/Debug/net8.0/login_feature2.MvcApplicationPartsAssemblyInfo.cache
 /Users/neilandreimonroyo/Documents/dotnet-projects/login_feature2/obj/Debug/net8.0/login_feature2.RazorAssemblyInfo.cache
 /Users/neilandreimonroyo/Documents/dotnet-projects/login_feature2/obj/Debug/net8.0/login_feature2.RazorAssemblyInfo.cs
+/Users/neilandreimonroyo/Documents/dotnet-projects/login_feature2/obj/Debug/net8.0/login_feature2.sourcelink.json
 /Users/neilandreimonroyo/Documents/dotnet-projects/login_feature2/obj/Debug/net8.0/staticwebassets.build.json
 /Users/neilandreimonroyo/Documents/dotnet-projects/login_feature2/obj/Debug/net8.0/staticwebassets.development.json
 /Users/neilandreimonroyo/Documents/dotnet-projects/login_feature2/obj/Debug/net8.0/staticwebassets/msbuild.login_feature2.Microsoft.AspNetCore.StaticWebAssets.props

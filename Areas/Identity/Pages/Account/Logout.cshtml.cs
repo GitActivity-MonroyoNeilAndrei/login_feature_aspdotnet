@@ -5,11 +5,11 @@
 using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using login_feature2.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using login_feature2.Models;
 
 namespace login_feature2.Areas.Identity.Pages.Account
 {
